@@ -25,12 +25,14 @@ with(data, {
        ylab="Global Active Power (kilowatts)", xlab="")
   lines(datetime, SubMet2, col='Red')
   lines(datetime, SubMet3, col='Blue')
-  legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",
-         legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
-         text.width = strwidth("50,000"))
+  legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, 
+         legend=c("SubMet1", "SubMet2", "SubMet3"),
+         text.width = strwidth("50,000"), y.intersp = 0.2,
+         xjust = 0.5, yjust = 0.5, x.intersp = 0.5)
   plot(datetime, GloReaPow, type="l", 
        ylab="Global Rective Power (kilowatts)",xlab="")})
 
 ## Saving to file
 dev.copy(png, file="Plot4.png", height=480, width=480)
+png(file = "myplot.png", bg = "transparent")
 dev.off()
